@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+    <main class="contenido">
+        <nav class="contenido__nav"><a class="contenido__nav__imagen" href="https://www.aluracursos.com/" target="_blank"><img src="img/Vector.png" alt="Logo de alura"></a></nav>
+        <textarea class="contenido__mensaje" type="text" id="contenido__mensaje" required placeholder="Ingrese el texto aqui"></textarea>
+        
+        <div id="contenido__accion">
+            <div class="contenido__accion__indicacion">
+                <img id="contenido__accion__indicacion__imagen" src="img/Group.png" alt="imagen de atencion">
+                <p class="contenido__accion__indicacion__texto" id="contenido__accion__indicacion__texto">Solo letras minúsculas y sin acentos</p>
+            </div>
+            <div class="contenido__accion__botones">
+                <button class="contenido__accion__botones__encriptar" onclick="encriptar()">Encriptar</button>
+                <button class="contenido__accion__botones__desencriptar" onclick="desencriptar()">Desencriptar</button>
+            </div>
+        </div>
+
+    </main>
+    
+    <footer class="footer">
+        <div class="footer__respuesta">
+            <textarea class="mensaje__respuesta" id="texto"></textarea>
+            <img class="footer__respuesta__imagen" id="imagen__buscar" src="img/Muñeco.png" alt="Imagen de busqueda">
+            <div id="footer__respuesta__base">
+                <h2 class="footer__respuesta__base__subtitulo" id="subtitulo">Ningún mensaje fue encontrado</h2>
+                <p class="footer__respuesta__base__texto" id="texto__busqueda">Ingresa el texto que desees encriptar o desencriptar.</p>
+                <button class="footer__respuesta__base__copiar" id="copiarContenido" onclick="copiarContenido()" disabled >Copiar</button>
+            </div>
+        </div>
+        
+    </footer>
+    <script src="logica.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+
+document.getElementById('copiarContenido').style.display = 'none';
+document.getElementById('texto').style.display = 'none';
+
+
+function encriptar(){
+    let mensaje = document.getElementById('contenido__mensaje').value
+    let mensajeEncriptado = mensaje.replace(/e/gi,"enter").replace(/i/gi, "imes").replace(/a/gi, "ai").replace(/o/gi, "ober").replace(/u/gi, "ufat")
+    let texto = document.getElementById('texto')
+    texto.innerHTML = `${mensajeEncriptado}`
+    document.querySelector('#copiarContenido').removeAttribute('disabled')
+    document.getElementById('imagen__buscar').style.display = 'none';
+    document.getElementById('copiarContenido').style.display = 'block';
+    document.getElementById('texto').style.display = 'block';
+    document.getElementById('subtitulo').style.display = 'none';
+    document.getElementById('texto__busqueda').style.display = 'none';
+}
+
+const copiarContenido = async () => {
+    let texto = document.getElementById('texto').innerHTML;
+    try {
+        await navigator.clipboard.writeText(texto);
+        console.log('Contenido copiado al clipboard');
+  } catch (err) {
+        console.error('Falló al copiar: ', err);
+  }
+}
+
+
+function desencriptar(){
+    let mensajeEncriptado = document.getElementById('contenido__mensaje').value
+    let mensaje = mensajeEncriptado.replace(/enter/gi,"e").replace(/imes/gi, "i").replace(/ai/gi, "a").replace(/ober/gi, "o").replace(/ufat/gi, "u")
+    let texto = document.getElementById('texto')
+    texto.innerHTML = `${mensaje}`
+}
+
